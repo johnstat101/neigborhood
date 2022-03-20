@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, 'index.html')
 
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -25,6 +26,7 @@ def signup(request):
     else:
         form = SignupForm()
     return render(request, 'registration/signup.html', {'form': form})
+
 
 def hoods(request):
     all_hoods = NeighbourHood.objects.all()
@@ -76,6 +78,7 @@ def hood_members(request, hood_id):
     hood = NeighbourHood.objects.get(id=hood_id)
     members = Profile.objects.filter(neighbourhood=hood)
     return render(request, 'members.html', {'members': members})
+
 
 def create_post(request, hood_id):
     hood = NeighbourHood.objects.get(id=hood_id)
