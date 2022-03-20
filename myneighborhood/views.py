@@ -1,5 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
+
+import myneighborhood
 from .forms import SignupForm, BusinessForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
@@ -42,7 +44,7 @@ def create_hood(request):
         form = NeighbourHoodForm(request.POST, request.FILES)
         if form.is_valid():
             hood = form.save(commit=False)
-            hood.admin = request.user.profile
+            myneighborhood.admin = request.user.profile
             hood.save()
             return redirect('hood')
     else:

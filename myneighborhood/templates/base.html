@@ -1,22 +1,49 @@
+{% load bootstrap4 %}
+<!--  -->
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Neighborhood</title>
+    <meta charset="utf-8">
+    <!--  -->
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title> My Neighborhood </title>
+    {% endif %}
+
+    <!-- styles -->
+    {% block styles %}
+    <!--  -->
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!--  -->
+    {% endblock %}
+
 </head>
 
 <body>
-    <!-- include navbar -->
-    {% include 'navbar.html' %}
+    {% include "navbar.html" %}
+    <!--  -->
+    {% block content %}
 
-    <!-- block -->
-    {% block content %} {% endblock %}
+    <!--  -->
+    {% endblock %}
 
+    <!-- scripts -->
+    {% block scripts %}
 
+    <!-- endblock -->
+    {% endblock %}
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        UPLOADCARE_PUBLIC_KEY = 'd4602f5f544c3dff20b7';
+    </script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+    {% bootstrap_javascript %}
 
 </body>
 

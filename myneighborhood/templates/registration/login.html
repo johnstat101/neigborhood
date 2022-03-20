@@ -1,21 +1,32 @@
 {% extends 'base.html' %}
 
-<!-- cripsy forms -->
+<!-- load forms -->
 {% load crispy_forms_tags %}
-<!-- edit block -->
-{% block content %}
 
+<!-- edit content block -->
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <form action="" method="post" novalidate>
-                {% csrf_token %} {{ form|crispy }}
-                <button class="btn btn-sm btn-info">Login</button>
-            </form>
+            <div class="card" style="margin-top:5%; padding:20px">
+                <div class="card-body">
+                    <h5 class="card-title"><a>Sign in to continue</a></h5>
+                    <div class="card-text">
+                        <form action="" method="post" novalidate>
+                            {% csrf_token %}
+                            <!--  -->
+                            {{ form|crispy}}
+                            <button type="submit" class="btn btn-info btn-sm">Login</button>
+                            <div>Not a member yet? <a href="{% url 'signup' %}" class="text-info">Register now</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="col-md-3"></div>
     </div>
-</div>
 
+</div>
 {% endblock %}

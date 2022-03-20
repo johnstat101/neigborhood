@@ -1,1 +1,1 @@
-web: gunicorn projectreviews.wsgi
+web: gunicorn neighborhood.wsgi
