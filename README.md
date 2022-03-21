@@ -1,23 +1,22 @@
-# [My App Reviews](https://github.com/johnstat101/review-my-apps)
+# [My Neighborhood](https://github.com/johnstat101/neigborhood)
 
 ## By John Kimani
 
 ## Description
 
-This application allows users to post a projects they have created and get it reviewed by their peers based on three different criteria;
-* Design
-* Usability
-* Content
+This application allows users to be in the loop about what is happening in their neighborhood such as important meetings, theft or even death.
 
 ### User Story
 
-As a user of the application I should be able to:
+As a user I would like to:
 
-* View posted projects and their details
-* Post a project to be rated/reviewed
-* Rate/ review other users' projects
-* Search for projects and view projects overall score
-* View my profile page
+* Sign in with the application to start using.
+* Set up a profile about me and a general location and my neighborhood name.
+* Find a list of different businesses in my neighborhood.
+* Find Contact Information for the health department and Police authorities
+* Create Posts that will be visible to everyone in my neighborhood
+* Change My neighborhood when I decide to move out.
+* Only view details of a single neighborhood.
 
 ### Prerequisites
 
