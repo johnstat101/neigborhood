@@ -5,12 +5,30 @@
 
 <!-- block content -->
 {% block content %}
+
+<!-- if user has joined a hood -->
+{% if user.profile.neighbourhood %}
+<!--  -->
 <div class="container">
-    <div class="text-white text-center" style="margin-top:15%">
-        <h1>Welcome to HoodWatch</h1>
-        <h5 style="margin-top:6%">Get Started by joining a hood today</h5>
-        <a href="{% url 'hood' %}" class="btn btn-sm btn-info mt-4">Join Hood</a>
+    <div style="margin-top:15%">
+        <h1>You are now Joined To a Hood</h1>
+        <h5 style="margin-top:6%">You can now create new business, post news and much more ...</h5>
+        <a href="{% url 'hood' %}" class="btn btn-sm btn-info mt-4">Click to Leave | Join New Hood</a>
     </div>
 
 </div>
+
+<!-- if not joined hood -->
+{% else %}
+<div class="container">
+    <div style="margin-top:15%">
+        <h1>Welcome to NeighborHood APP</h1>
+        <h5 style="margin-top:6%">Get Started by joining a new hood today...</h5>
+        <a href="{% url 'hood' %}" class="btn btn-sm btn-info mt-4">Join A New Hood</a>
+    </div>
+
+</div>
+{% endif %}
+
+<!-- end block content -->
 {% endblock %}
